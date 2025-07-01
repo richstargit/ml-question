@@ -12,10 +12,7 @@ df["TotalPrice"] = df["Price"]*df["Quantity"]
 print(df)
 print("4.--------------------------------------------------------------")
 df["Discount"]=5
-for i in range(len(df)):
-    if df.loc[i,"Category"]=="IT":
-        df.loc[i,"Discount"]=10
-
+df.loc[df["Category"]=="IT","Discount"]=10
 print(df)
 print("5.--------------------------------------------------------------")
 df["NetPrice"]=df["TotalPrice"]*(1-df["Discount"]/100)
